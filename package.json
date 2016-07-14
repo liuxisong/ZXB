@@ -3,10 +3,21 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start-server": "babel-node ./server/server.js"
   },
   "dependencies": {
+    "jpush-react-native": "0.0.11",
     "react": "^15.1.0",
-    "react-native": "0.27.0"
+    "react-native": "0.27.0",
+    "react-native-swiper": "^1.4.5",
+    "react-native-tab-navigator": "^0.3.2",
+    "react-native-vector-icons": "^2.0.3",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-actions": "^0.10.0"
+  },
+  "devDependencies": {
+    "express": "^4.14.0"
   }
 }
