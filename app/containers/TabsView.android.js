@@ -16,6 +16,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import connectComponent from '../utils/connectComponent';
 import * as DiscoverComponent from './Discover';
+import News from '../components/news/News';
 
 const Discover = connectComponent(DiscoverComponent);
 
@@ -24,7 +25,7 @@ class TabsView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'discover'
+      selectedTab: 'info'
     };
   }
 
@@ -47,9 +48,7 @@ class TabsView extends Component {
           renderIcon={() => renderIcon('ios-book-outline')}
           renderSelectedIcon={() => renderSelectedIcon('ios-book')}
           onPress={() => this.setState({ selectedTab: 'info' })}>
-          <View>
-            <Text style={{color: 'red'}}>info</Text>
-          </View>
+          <News />
         </TabNavigator.Item>
         <TabNavigator.Item
           tabStyle={styles.test}

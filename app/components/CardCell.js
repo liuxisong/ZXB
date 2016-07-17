@@ -23,8 +23,6 @@ class CardCell extends Component {
           <View style={styles.text}>
             <Text>
               领悟22年VC生涯真谛, 57岁章苏阳追梦"火山石"
-              领悟22年VC生涯真谛, 57岁章苏阳追梦"火山石"
-              领悟22年VC生涯真谛, 57岁章苏阳追梦"火山石"...
             </Text>
           </View>
         </View>
