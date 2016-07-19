@@ -18,19 +18,44 @@ import {refreshControl} from '../../constants/commonComponentProps';
 
 const data1 = [
   {
-    title: 'title_01',
+    title: '政府负责打仗，民众负责打酱油',
+    imgUrl: 'http://ww4.sinaimg.cn/crop.0.0.402.225.1000.562/77101dc1gw1f5z0fr3manj20b606at93.jpg',
     time: 'time_01',
     content: 'content_01',
+    commentCount: 1700,
+    readCount: 5000
   },
   {
-    title: 'title_02',
-    time: 'time_02',
-    content: 'content_02',
+    title: '这群“荣民”曾建设了台湾，如今却被台湾年轻人辱骂',
+    imgUrl: 'http://ww2.sinaimg.cn/wap720/77101dc1jw1f5yxr8qlesj21bc0qon5z.jpg',
+    time: 'time_01',
+    content: 'content_01',
+    commentCount: 1700,
+    readCount: 5000
   },
   {
-    title: 'title_03',
-    time: 'time_03',
-    content: 'content_03',
+    title: 'Day 22. 一个微笑灿烂一座城',
+    imgUrl: 'http://ww4.sinaimg.cn/crop.0.0.1024.575.1000.562/5464ac13gw1f5yhxe3mgoj20sg0xk79x.jpg',
+    time: 'time_01',
+    content: 'content_01',
+    commentCount: 1700,
+    readCount: 5000
+  },
+  {
+    title: '藏传佛教的活佛等级',
+    imgUrl: 'http://ww1.sinaimg.cn/crop.0.106.1000.562.1000.562/a68d6077jw1f5yi9bwicdj20rs0kudk7.jpg',
+    time: 'time_01',
+    content: 'content_01',
+    commentCount: 1700,
+    readCount: 5000
+  },
+  {
+    title: '蔡英文获悉后表达关切 指示行政院了解详细情形',
+    imgUrl: 'http://ww3.sinaimg.cn/bmiddle/68111b37jw1evp6gwzdxuj20fh0k20td.jpg',
+    time: 'time_01',
+    content: 'content_01',
+    commentCount: 1700,
+    readCount: 5000
   }
 ];
 
@@ -46,29 +71,26 @@ class NewsList extends Component {
 
   onEndReached() {
     var data = data1.push({
-      title: 'title_04',
-      time: 'time_04',
-      content: 'content_04',
+      title: '母亲老了 这些话就别再说了',
+      imgUrl: 'http://ww3.sinaimg.cn/crop.0.51.618.347.1000.562/7b518976jw1f5xuaxlljcj20h60fimz0.jpg',
+      time: 'time_01',
+      content: 'content_01',
+      commentCount: 1700,
+      readCount: 5000
     });    
     this.setState({
-      ds: ds.cloneWithRows(data),
+      ds: this.state.ds.cloneWithRows(data1),
     });
   }
 
   renderRow(news) {
-    console.log(`news: ${JSON.stringify(news)}`);
-   /* return (
-      <View style={{flex: 1, backgroundColor: 'blue'}}>
+    return (
+      <View style={{paddingTop: 5, paddingBottom: 5, borderBottomWidth: 0.5, borderBottomColor: 'rgba(255,255,255,0.1)'}}>
         <NewsCell
           news={news}
           onPress={(news) => {
             console.log('click a news');
           }}/>
-      </View>
-    );*/
-    return (
-      <View>
-        <Text style={{color: 'red'}}>text</Text>
       </View>
     );
   }
@@ -78,31 +100,26 @@ class NewsList extends Component {
   }
 
   render() {
-   /* return (
+    return (
       <ListView 
         // ref={}
         showsVerticalScrollIndicator
         removeClippedSubviews
         enabledEmptySections
-        initialListSize={3}
+        initialListSize={5}
         pagingEnabled={false}
         scrollRenderAheadDistance={90}
         dataSource={this.state.ds}
         renderRow={this.renderRow.bind(this)}
-        onEndReachedThreshold={30}
-        // onEndReached={this.onEndReached.bind(this)}
+        onEndReachedThreshold={60}
+        onEndReached={this.onEndReached.bind(this)}
         // renderFooter={this.renderFooter.bind(this)}
         refreshControl={
           <RefreshControl 
-            refreshing={true}
+            refreshing={false}
             onRefresh={() => console.log('onRefresh')}
             {...refreshControl}/>
         }/>
-    );*/
-    return (
-      <View style={{alignSelf: 'center'}}>
-        <Text style={{color: 'red'}}>{this.props.tab}</Text>
-      </View>
     );
   }
 }

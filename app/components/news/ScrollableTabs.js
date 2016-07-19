@@ -89,6 +89,7 @@ class ScrollableTabs extends Component {
 
   onPageScroll(e) {
     const {offset, position} = e.nativeEvent;
+    console.log(`invoke onPageScroll, offset: ${offset}, position: ${position}`);
     let x = offset * 18;
     // this.animateScroll(x);
     let scrollToL = this.activeTabIndex > position && offset > 0;
@@ -160,7 +161,7 @@ class ScrollableTabs extends Component {
             ref={view => this.tabs[index] = view}
             key={index}
             style={[styles.navItem, {marginLeft: this.tabSpace}, activeTabStyle]}>
-            <Text ref={`tabIndex_${index}`} style={{fontSize: 20}}>{item}</Text>
+            <Text ref={`tabIndex_${index}`} style={{fontSize: 16}}>{item}</Text>
           </View>
         </TouchableOpacity>
       );
